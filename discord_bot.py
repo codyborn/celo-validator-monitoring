@@ -19,7 +19,7 @@ OK = 0; VALIDATOR_DOWN = 1; CHAIN_DOWN = 2
 
 validator_name = os.environ.get('CELO_VALIDATOR_NAME', '...default validator name...')
 validator_address = os.environ.get('CELO_VALIDATOR_SIGNER_ADDRESS', '...default validator address...')
-validator_threshold = timedelta(minutes = 30)
+validator_threshold = timedelta(minutes = 10)
 chain_threshold = timedelta(minutes = 5)
 check_period_sec = 60
 initial_status = OK
@@ -27,8 +27,8 @@ initial_status = OK
 discord_bot_token = os.environ.get('CELO_MONITOR_DISCORD_BOT_TOKEN', '...default discord bot token...')
 discord_channel_name = os.environ.get('CELO_MONITOR_DISCORD_CHANNEL', '...default discord channel name...')
 
-url = 'https://baklava-blockscout.celo-testnet.org/address/%s/validations?type=JSON' % validator_address
-blocks_url = 'https://baklava-blockscout.celo-testnet.org/blocks?type=JSON'
+url = 'https://explorer.celo.org/address/%s/validations?type=JSON' % validator_address
+blocks_url = 'https://explorer.celo.org/blocks?type=JSON'
 pattern = re.compile(b'data-from-now=\\\\"(.*?)\\\\"')
 
 logging.basicConfig(level = logging.WARNING,
